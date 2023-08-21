@@ -8,7 +8,7 @@ const onFinish = (values: any) => {
 function UrlShortenerForm() {
   return (
     <>
-      <Form name='SubmitUrl'>
+      <Form name='SubmitUrl' onFinish={onFinish}>
         <Form.Item>
           <Space.Compact style={{ width: "100%" }}>
             <Input />
