@@ -1,7 +1,7 @@
 import React from "react";
 import { Input, Form, Space, Button } from "antd";
 
-const onFinish = (values: any) => {
+const onFinish = (values: unknown) => {
   console.log("Success", values);
 };
 
