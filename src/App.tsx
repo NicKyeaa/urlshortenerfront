@@ -1,7 +1,12 @@
 import "./App.css";
+import UrlShortenerForm from "./components/UrlShortenerForm";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <UrlShortenerForm />
+    </>
+  );
 }
 
 export default App;
