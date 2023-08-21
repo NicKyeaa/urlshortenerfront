@@ -10,8 +10,20 @@ function UrlShortenerForm() {
     <>
       <Form name='SubmitUrl' onFinish={onFinish}>
         <Space.Compact style={{ width: "100%" }}>
-          <Form.Item name='URL'>
-            <Input />
+          <Form.Item
+            name='URL'
+            rules={[
+              {
+                required: true,
+                message: "Please input your URL",
+              },
+              {
+                type: "url",
+                message: "Please enter a valid URL",
+              },
+            ]}
+          >
+            <Input placeholder='Please input your URL' />
           </Form.Item>
           <Form.Item>
             <Button type='primary' htmlType='submit'>
