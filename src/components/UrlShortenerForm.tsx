@@ -9,12 +9,16 @@ function UrlShortenerForm() {
   return (
     <>
       <Form name='SubmitUrl' onFinish={onFinish}>
-        <Form.Item>
-          <Space.Compact style={{ width: "100%" }}>
+        <Space.Compact style={{ width: "100%" }}>
+          <Form.Item name='URL'>
             <Input />
-            <Button type='primary'>Submit</Button>
-          </Space.Compact>
-        </Form.Item>
+          </Form.Item>
+          <Form.Item>
+            <Button type='primary' htmlType='submit'>
+              Submit
+            </Button>
+          </Form.Item>
+        </Space.Compact>
       </Form>
     </>
   );
