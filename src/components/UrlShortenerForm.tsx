@@ -1,19 +1,22 @@
+import { useState } from 'react';
 import axios from 'axios';
 import { Input, Form, Space, Button } from 'antd';
 
-const onFinish = async (values: unknown) => {
-  // Making a POST request to shorten an URL
-  try {
-    console.log('Success', values);
-
-    const result = await axios.post('http://localhost:3000/shorten', values);
-    console.log(result);
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 function UrlShortenerForm() {
+  const [URLs, setURLs] = useState([]);
+
+  const onFinish = async (values: unknown) => {
+    // Making a POST request to shorten an URL
+    try {
+      console.log('Success', values);
+
+      const result = await axios.post('http://localhost:3000/shorten', values);
+      console.log(result.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <Form name='SubmitUrl' onFinish={onFinish}>
