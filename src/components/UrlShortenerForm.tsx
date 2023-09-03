@@ -3,9 +3,16 @@ import axios from 'axios';
 import { Input, Form, Space, Button } from 'antd';
 
 const onFinish = async (values: unknown) => {
-  console.log('Success', values);
-  const result = axios.post('http://localhost:3000/shorten', values);
-  console.log(result);
+  // Making a POST request to shorten an URL
+
+  try {
+    console.log('Success', values);
+
+    const result = axios.post('http://localhost:3000/shorten', values);
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 function UrlShortenerForm() {
