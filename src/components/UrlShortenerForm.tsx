@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import axios from 'axios';
 import { Input, Form, Space, Button } from 'antd';
 
 function UrlShortenerForm() {
-  const [URLs, setURLs] = useState([]);
-
   const onFinish = async (values: unknown) => {
     // Making a POST request to shorten an URL
     try {
