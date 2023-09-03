@@ -17,13 +17,14 @@ const columns: ColumnsType<DataType> = [
   },
   {
     title: 'Short URL',
+    dataIndex: 'shortURL',
     key: 'shortURL',
     render: (shortURL) => <a>{shortURL}</a>,
   },
 ];
 
 const URLList: React.FC = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<DataType[]>([]);
 
   const fetchData = async () => {
     try {
@@ -31,6 +32,7 @@ const URLList: React.FC = () => {
       result.data.forEach((el) => {
         el.key = el._id;
       });
+      setData(result.data);
       console.log(result.data);
 
       //   setData(result.data);
