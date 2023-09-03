@@ -1,10 +1,12 @@
-import "./App.css";
-import UrlShortenerForm from "./components/UrlShortenerForm";
+import './App.css';
+import URLList from './components/URLList';
+import UrlShortenerForm from './components/UrlShortenerForm';
 
 function App() {
   return (
     <>
       <UrlShortenerForm />
+      <URLList />
     </>
   );
 }

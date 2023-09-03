@@ -12,8 +12,8 @@ interface DataType {
 const columns: ColumnsType<DataType> = [
   {
     title: 'Original URL',
-    dataIndex: 'longURL',
-    key: 'longURL',
+    dataIndex: 'originalURL',
+    key: 'originalURL',
   },
   {
     title: 'Short URL',
@@ -28,7 +28,12 @@ const URLList: React.FC = () => {
   const fetchData = async () => {
     try {
       const result = await axios.get('http://localhost:3000');
-      console.log(result);
+      result.data.forEach((el) => {
+        el.key = el._id;
+      });
+      console.log(result.data);
+
+      //   setData(result.data);
     } catch (error) {
       console.error(error);
     }
